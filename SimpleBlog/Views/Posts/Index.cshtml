@@ -1,18 +1,21 @@
-﻿
-@{
-    Layout = null;
+﻿@{ 
+    ViewBag.Title = "Posts";
 }
 
-<!DOCTYPE html>
+@section Scripts
+{
+    <script>
+        alert("Hi!");
+    </script>
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        <h1>Posts Index</h1>
-    </div>
-</body>
-</html>
+<h1>Posts Index</h1>
+<p>
+    <a href="@Url.RouteUrl("login")">Click here1</a> to login</p>
+<p>
+        @Html.RouteLink("Click here", "login") to login!
+</p>
+
+
+
+
