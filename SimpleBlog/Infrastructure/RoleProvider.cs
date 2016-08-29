@@ -21,6 +21,19 @@ namespace SimpleBlog.Infrastructure
             }
         }
 
+        public override string[] GetRolesForUser(string username)
+        {
+            if(username == "nelson")
+                return new[] { "admin" };
+            return new string[] { };
+            throw new NotImplementedException();
+        }
+
+        public override bool IsUserInRole(string username, string roleName)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
             throw new NotImplementedException();
@@ -46,20 +59,12 @@ namespace SimpleBlog.Infrastructure
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)
-        {
-            throw new NotImplementedException();
-        }
 
         public override string[] GetUsersInRole(string roleName)
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsUserInRole(string username, string roleName)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
         {
