@@ -12,7 +12,7 @@ namespace SimpleBlog
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            var namespaces = new[] { typeof(PostsController).Namespace };
+            var namespaces = new[] { typeof(PostsController).Namespace };  
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
