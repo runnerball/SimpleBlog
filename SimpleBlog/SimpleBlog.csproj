@@ -149,6 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Scripts\Forms.js" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Styles\admin.css" />
     <Content Include="Content\Styles\bootstrap-theme.css" />
@@ -157,36 +158,39 @@
     <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Styles\site.css" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Areas\Admin\Views\Users\New.cshtml" />
-    <None Include="scripts\jquery-3.1.0.intellisense.js" />
-    <Content Include="scripts\jquery-3.1.0.js" />
-    <Content Include="scripts\jquery-3.1.0.min.js" />
-    <Content Include="scripts\jquery-3.1.0.slim.js" />
-    <Content Include="scripts\jquery-3.1.0.slim.min.js" />
-    <Content Include="scripts\jquery-3.1.0.slim.min.map" />
-    <Content Include="scripts\jquery-3.1.0.min.map" />
-    <None Include="scripts\jquery.validate-vsdoc.js" />
-    <Content Include="scripts\jquery.validate.js" />
-    <Content Include="scripts\jquery.validate.min.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="scripts\npm.js" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\ResetPassword.cshtml" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
@@ -200,6 +204,7 @@
     </Compile>
     <Compile Include="Infrastructure\RoleProvider.cs" />
     <Compile Include="Infrastructure\SelectedTabAttribute.cs" />
+    <Compile Include="Infrastructure\TransactionFilter.cs" />
     <Compile Include="Migrations\_001_UsersAndRoles.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
