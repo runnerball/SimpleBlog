@@ -26,7 +26,6 @@ namespace SimpleBlog.Migrations
             Create.Table("role_users")
                 .WithColumn("user_id").AsInt32().ForeignKey("users", "id").OnDelete(Rule.Cascade)
                 .WithColumn("role_id").AsInt32().ForeignKey("roles", "id").OnDelete(Rule.Cascade);
-            //throw new NotImplementedException();
             
         }
 
@@ -35,7 +34,6 @@ namespace SimpleBlog.Migrations
             Delete.Table("role_users");
             Delete.Table("roles");
             Delete.Table("users");
-            //throw new NotImplementedException();
         }
         
     }
