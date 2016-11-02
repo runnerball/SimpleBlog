@@ -12,7 +12,7 @@ namespace SimpleBlog.Models
         public virtual int Id { get; set; }
         public virtual User User { get; set; }
         public virtual string Title { get; set; }
-        public virtual string Slub { get; set; }
+        public virtual string Slug { get; set; }
         public virtual string Content { get; set; }
 
         public virtual DateTime CreatedAt { get; set; }
@@ -39,7 +39,7 @@ namespace SimpleBlog.Models
             });
 
             Property(x => x.Title, x => x.NotNullable(true));
-            Property(x => x.Slub, x => x.NotNullable(true));
+            Property(x => x.Slug, x => x.NotNullable(true));
             Property(x => x.Content, x => x.NotNullable(true));
 
             Property(x => x.CreatedAt, x => 
