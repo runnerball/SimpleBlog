@@ -47,7 +47,7 @@ namespace SimpleBlog.Infrastructure
             Page = page;
             PerPage = perPage;
 
-            TotalCount = (int)Math.Ceiling((float)TotalCount / PerPage);
+            TotalPages = (int)Math.Ceiling((float)TotalCount / PerPage);
             HasNextPage = Page < TotalPages;
             HasPreviousPage = Page > 1;
         }
