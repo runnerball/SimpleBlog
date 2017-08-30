@@ -48,17 +48,8 @@ namespace SimpleBlog.Models
                 x.NotNullable(true);
             });
 
-            Property(x => x.DeletedAt, x => x.Column("updated_at"));
-            //Property(x => x.UpdatedAt, x => {
-            //    x.Column("updated_at");
-            //    x.NotNullable(true);
-            //});
-
+            Property(x => x.UpdatedAt, x => x.Column("updated_at"));
             Property(x => x.DeletedAt, x => x.Column("deleted_at"));
-            //Property(x => x.DeletedAt, x => {
-            //    x.Column("deleted_at");
-            //    x.NotNullable(true);
-            //});
 
             Bag(x => x.Tags, x =>
             {
