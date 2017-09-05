@@ -36,7 +36,13 @@ namespace SimpleBlog.Areas.Admin.Controllers
         {
             return View("Form", new PostsForm 
             {
-                IsNew = true
+                IsNew = true,
+                Tags = Database.Session.Query<Tag>().Select(tag => new TagCheckbox
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    IsChecked = false
+                }).ToList()
             });
         }
 
@@ -54,7 +60,13 @@ namespace SimpleBlog.Areas.Admin.Controllers
                 PostId = id,
                 Content = post.Content,
                 Slug = post.Slug,
-                Title = post.Title
+                Title = post.Title,
+                Tags = Database.Session.Query<Tag>().Select(tag => new TagCheckbox
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    IsChecked = post.Tags.Contains(tag)
+                }).ToList()
             });
         }
 
@@ -94,6 +106,44 @@ namespace SimpleBlog.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
 
+        }
+
+        public ActionResult Trash(int id)
+        {
+            var post = Database.Session.Load<Post>(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            post.DeletedAt = DateTime.UtcNow;
+            Database.Session.Update(post);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        { 
+            var post = Database.Session.Load<Post>(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            Database.Session.Delete(post);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Restore(int id)
+        {
+            var post = Database.Session.Load<Post>(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            post.DeletedAt = null;
+            Database.Session.Update(post);
+            return RedirectToAction("Index");
         }
     }
 }

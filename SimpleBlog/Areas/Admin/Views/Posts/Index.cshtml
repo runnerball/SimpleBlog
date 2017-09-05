@@ -39,6 +39,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>No</th>
             <th>Title</th>
             <th>Author</th>
             <th>Tags</th>
@@ -56,6 +57,7 @@
             }
 
             <tr class="@cls">
+                <td>@post.Id</td>
                 <td>@post.Title</td>
                 <td>@post.User.Username</td>
                 <td>@string.Join(", ", post.Tags.Select(t => t.Name))</td>
@@ -68,22 +70,23 @@
                     @if (!post.IsDeleted)
                     {
                         <div class="btn-group btn-group-xs">
-                            <a href="#" class="btn btn-danger">
+                            <a href="@Url.Action("trash",new {post.Id})" class="btn btn-danger" data-post="내용이 화면에서 trash(폐기)됩니다. 진행할까요?">
                                 <i class="glyphicon glyphicon-remove"></i>Trash
                             </a>
                             <a href="#" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="@Url.Action("delete", new {post.Id})" data-post="내용이 삭제됩니다. 진행할까요?">
                                         <i class="glyphicon glyphicon-remove"></i>delete
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> 
+
                     }
                     else
                     {
-                        <a href="#" class="btn btn-xs btn-success">
+                        <a href="@Url.Action("restore", new {post.Id})" class="btn btn-xs btn-success" data-post="">
                             <i class="glyphicon glyphicon-plus-sign"></i>restore
                         </a>
                     }
