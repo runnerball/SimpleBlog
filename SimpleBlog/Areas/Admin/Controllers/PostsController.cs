@@ -78,6 +78,8 @@ namespace SimpleBlog.Areas.Admin.Controllers
             if (!ModelState.IsValid)
                 return View(form);
 
+            var selectedTags = ReconsileTags(form.Tags);
+
             Post post;
             if (form.IsNew)
             {
