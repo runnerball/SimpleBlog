@@ -39,8 +39,8 @@
 
     function addTag(name) {
 
-        //var newIndex = $tagEditor.find(".tag-select > li").size() - 1;
-        var newIndex = $tagEditor.find(".tag-select > li").length;
+        var newIndex = $tagEditor.find(".tag-select > li").size() - 1;
+        //var newIndex = $tagEditor.find(".tag-select > li").length;
 
         $tagEditor
         .find(".tag-select > li.template")
