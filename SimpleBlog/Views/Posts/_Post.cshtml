@@ -15,7 +15,7 @@
             }
 
         </ul>
-        Posted : @((int)(DateTime.UtcNow - Model.CreatedAt).TotalMinutes) minutes ago
+        Posted : <abbr class="timeago" title="@Model.CreatedAt.ToString("yyyy-MM-ddTHH:mm:ssZ")"></abbr>
     </footer>
 </article>
 

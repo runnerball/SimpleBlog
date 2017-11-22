@@ -15,7 +15,7 @@
 {
     var maxPostsInTag = Model.Tags.Max(t => t.PostCount);
 
-    <div class="panel panel-info">
+    <div class="panel panel-info tags">
         <div class="panel-heading">Tags</div>
         <div class="panel-body">
             <div class="list-group">
@@ -25,7 +25,7 @@
 
                     <a href="@Url.RouteUrl("Tag", new { tag.Id, tag.Slug })" class="list-group-item">
                         <span class="name">@tag.Name</span>
-                        <span class="name">@tag.PostCount</span>
+                        <span class="badge">@tag.PostCount</span>
                         <span class="progress">
                             <span class="progress-bar progress-bar-info" style="width:@percent%"></span>
                         </span>
